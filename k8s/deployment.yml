@@ -17,3 +17,15 @@ spec:
           image: friedrichmatheus/socket-io-chat:latest
           ports:
             - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: socket-io-chat
+  namespace: poc
+spec:
+  selector:
+    name: socket-io-chat
+  ports:
+    - port: 80
+      targetPort: 3000
