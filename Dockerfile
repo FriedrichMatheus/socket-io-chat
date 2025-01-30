@@ -6,8 +6,6 @@ WORKDIR /home/node/app
 
 COPY ./package.json ./package-lock.json ./
 
-USER node
-
 RUN npm install
 
 COPY . .
