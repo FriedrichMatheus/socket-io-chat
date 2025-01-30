@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socket-io-chat
+  namespace: poc
+spec:
+  selector:
+    matchLabels:
+      name: socket-io-chat
+  template:
+    metadata:
+      labels:
+        name: socket-io-chat
+    spec:
+      containers:
+        - name: socket-io-chat
+          image: friedrichmatheus/socket-io-chat:latest
+          ports:
+            - containerPort: 3000
